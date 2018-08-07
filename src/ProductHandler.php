@@ -169,7 +169,7 @@ class ProductHandler implements ProductHandlerInterface {
     $image_field_name = $config->get('product_image');
 
     if (isset($product->{$image_field_name}->entity)) {
-      $image_url = $product->{$image_field_name}->entity->url();
+      $image_url = file_create_url($product->{$image_field_name}->entity->getFileUri());
     }
 
     return $image_url;
